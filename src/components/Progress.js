@@ -1,10 +1,8 @@
-export default function Progress({
-  index,
-  numQuestions,
-  points,
-  maxPossiblePoints,
-  answer,
-}) {
+import { useQuiz } from "../context/QuizContext";
+
+export default function Progress() {
+  const { index, answer, numQuestions, points, maxPossiblePoints } = useQuiz();
+
   const currentIndex = answer !== null ? index + 1 : index;
 
   return (
